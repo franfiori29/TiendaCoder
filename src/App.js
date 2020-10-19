@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <h2>El placer de conducir</h2>
+      <p className="h2">El placer de conducir</p>
     </>
   );
 }

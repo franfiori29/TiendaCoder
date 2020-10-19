@@ -1,3 +1,4 @@
+/*
 .menu {
   background-color: #c4f2ff7c;
   font-weight: bold;
@@ -15,12 +16,18 @@
   display: flex;
   align-items: center;
 }
+*/
 
-.imgLogo {
-  max-width: 5%;
-  margin: 0 20px;
+.divLogo {
+  display: inline-block;
 }
 
+.imgLogo {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+/*
 .nav-links {
   display: flex;
   justify-content: space-around;
@@ -31,3 +38,5 @@
   letter-spacing: 3px;
   font-weight: bold;
 }
+
+*/
