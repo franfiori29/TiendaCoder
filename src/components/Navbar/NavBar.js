@@ -1,21 +1,23 @@
 import React from "react";
+import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="navbar-brand divLogo">
-        <a class="navbar-brand" href="#">
+        <a className="navbar-brand" href="#">
           <img
             src={require("../../assets/bmw-logo.png")}
             class="d-inline-block align-top imgLogo"
             alt="LogoBMW"
           />
-          BMW
+          <span id="BMW">BMW</span>
         </a>
       </div>
+      <CartWidget />
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNav"
@@ -23,9 +25,9 @@ function NavBar() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item active">
             <a className="nav-link">AUTOS</a>

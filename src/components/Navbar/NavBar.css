@@ -1,42 +1,36 @@
-/*
-.menu {
-  background-color: #c4f2ff7c;
-  font-weight: bold;
-  padding: 10px 0;
-  min-height: 8vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.logo {
-  margin: 10px;
-  letter-spacing: 4px;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-}
-*/
-
 .divLogo {
   display: inline-block;
+  flex: 1;
 }
+
+.navbar-brand{
+  display: flex;
+  align-items: center;
+}  
 
 .imgLogo {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   margin: 0 10px;
 }
-/*
-.nav-links {
+
+.navbar {
   display: flex;
-  justify-content: space-around;
-  width: 40%;
 }
 
-.nav-links a {
-  letter-spacing: 3px;
-  font-weight: bold;
+#carrito {
+  order: 1;
+  margin-right: 20px
 }
 
-*/
+@media (max-width: 990px) {
+  #carrito {
+    order: 0
+  }
+}
+
+@media (max-width: 600px) {
+  #BMW {
+    display: none;
+  }
+}
