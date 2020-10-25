@@ -1,4 +1,4 @@
-.itemCount{
+.itemCount {
     display: flex;
     flex-wrap: wrap;
     width: 200px;
@@ -6,16 +6,15 @@
     align-items: center;
 }
 
-.disponibility, .itemController{
+.disponibility, .itemController {
     width: 100%;
     text-align: center;
     margin: 10px ;
     font-weight: bold;
 }
 
-button{
+button {
     background-color: white;
-    border: 2px solid red;
-    border-radius: 10px;
+    border: 2px solid #F44336;
     padding: 5px 10px;
 }
