@@ -6,17 +6,17 @@ import ItemCount from "./components/ItemCount/ItemCount";
 
 function App() {
 
-  let stock = 10;
+  let stock = 0;
 
   function handleAdd(toAdd) {
-    toAdd > stock ? alert("NO HAY STOCK") : alert("Tenemos el stock solicitado")
+    if (!stock) alert("No hay stock");
   }
 
   return (
     <>
       <NavBar />
       <ItemListContainer title={"El placer de conducir"} />
-      <ItemCount stock={stock} initial={1} onAdd={handleAdd} />
+      <ItemCount stock={stock} initial={0} onAdd={handleAdd} />
     </>
   );
 }

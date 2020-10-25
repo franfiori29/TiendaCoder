@@ -6,9 +6,9 @@ function ItemCount({ stock, initial, onAdd }) {
 
     function handleClick(e) {
         if (e.target.id === "subtract") {
-            setToAdd(toAdd === 1 ? 1 : toAdd - 1)
+            setToAdd(toAdd === initial ? initial : toAdd - 1)
         } else {
-            setToAdd(toAdd + 1)
+            setToAdd(toAdd >= stock ? stock : toAdd + 1)
         }
     }
 
