@@ -3,6 +3,8 @@ import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 
 function NavBar() {
+
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="navbar-brand divLogo">
