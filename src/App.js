@@ -6,7 +6,7 @@ import ItemCount from "./components/ItemCount/ItemCount";
 
 function App() {
 
-  let stock = 0;
+  let stock = 10;
 
   function handleAdd(toAdd) {
     if (!stock) alert("No hay stock");

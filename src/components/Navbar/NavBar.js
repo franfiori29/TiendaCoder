@@ -11,7 +11,7 @@ function NavBar() {
         <a className="navbar-brand" href="#">
           <img
             src={require("../../assets/bmw-logo.png")}
-            class="d-inline-block align-top imgLogo"
+            className="d-inline-block align-top imgLogo"
             alt="LogoBMW"
           />
           <span id="BMW">BMW</span>
