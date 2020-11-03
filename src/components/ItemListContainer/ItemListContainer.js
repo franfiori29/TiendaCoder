@@ -16,7 +16,7 @@ const itemPromise = new Promise((res) => {
 
 export default function ItemListContainer({ title }) {
 
-    const [arrayItems, setArrayItems] = useState([]);
+    const [arrayItems, setArrayItems] = useState(null);
 
     useEffect(() => {
         itemPromise.then(res => setArrayItems(res));
@@ -25,7 +25,7 @@ export default function ItemListContainer({ title }) {
     return (
         <>
             <h1>{title}</h1>
-            <ItemList items={arrayItems} />
+            {arrayItems && <ItemList items={arrayItems} />}
         </>
     )
 }
