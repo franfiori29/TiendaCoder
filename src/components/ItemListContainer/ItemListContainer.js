@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ItemList from '../ItemList/ItemList';
+import ItemList from './ItemList/ItemList.js';
 
 const itemPromise = new Promise((res) => {
     setTimeout(() => {

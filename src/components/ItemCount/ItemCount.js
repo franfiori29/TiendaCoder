@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './ItemCount.css'
 
-function ItemCount({ stock, initial, onAdd }) {
+function ItemCount({ stock, initial }) {
     const [toAdd, setToAdd] = useState(initial);
 
     function handleClick(e) {
@@ -10,6 +10,9 @@ function ItemCount({ stock, initial, onAdd }) {
         } else {
             setToAdd(toAdd >= stock ? stock : toAdd + 1)
         }
+    }
+    function handleAdd(toAdd) {
+        if (!stock) alert("No hay stock");
     }
 
     return (
@@ -20,7 +23,7 @@ function ItemCount({ stock, initial, onAdd }) {
                 <span> {toAdd} </span>
                 <button onClick={handleClick} id="add"> + </button>
             </div>
-            <button onClick={() => onAdd(toAdd)}>Agregar</button>
+            <button onClick={() => handleAdd(toAdd)}>Agregar</button>
         </div>
     )
 }
