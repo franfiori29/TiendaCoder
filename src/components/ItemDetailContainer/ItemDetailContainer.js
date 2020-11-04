@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail/ItemDetail.js';
+import Loading from './Loading/Loading.js';
 
 const itemPromise = new Promise((res) => {
     setTimeout(() => {
@@ -30,6 +31,7 @@ export default function ItemDetailContainer() {
     }, [])
 
     return <>
-        { item && <ItemDetail item={item} />};
+        {load && <Loading />}
+        { item && <ItemDetail item={item} />}
     </>
 }
