@@ -6,19 +6,22 @@ import ItemCount from '../../ItemCount/ItemCount'
 export default function ItemDetail(props) {
     return (
         <div style={{
-            border: '3px solid black',
             margin: '10px',
             padding: '10px',
             display: 'flex',
-            flexDirection: 'column',
+            flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: ' center',
-            width: '600px'
+            width: '70%',
+            margin: 'auto'
         }} >
+            <p style={{ flex: '1', textAlign: 'center' }} > <b>{props.item.title}</b></p>
             <p><b>{props.item.description}</b></p>
-            <p><b>${props.item.price}</b></p>
-            <img src={props.item.pictureUrl} style={{ width: '450px' }} />
-            <ItemCount stock={props.item.stock} initial={0} />
-        </div>
+            <img src={props.item.pictureUrl} style={{ width: '60%' }} />
+            <div style={{ textAlign: 'center' }}>
+                <p><b>${props.item.price}</b></p>
+                <ItemCount stock={props.item.stock} initial={0} />
+            </div>
+        </div >
     )
 }
