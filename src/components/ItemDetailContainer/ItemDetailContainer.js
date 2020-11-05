@@ -11,7 +11,7 @@ const itemPromise = new Promise((res) => {
                 description: 'El BMW X6 es un automóvil todoterreno de gran lujo del segmento E del fabricante alemán BMW, que salió a la venta en enero de 2008 junto con su presentación en el salón del Automóvil de Detroit. Se basa en gran parte en el BMW X5 pero con una silueta más deportiva, semejante a un cupé. Es un cinco puertas con cuatro plazas, motor delantero longitudinal y tracción a las cuatro ruedas.',
                 price: 40000,
                 pictureUrl: 'https://www.diariomotor.com/imagenes/picscache/1920x1600c/bmw-x6-2020-fotos-30_1920x1600c.jpg',
-                stock: 0
+                stock: 5
             }
         )
     }, 2000);
@@ -31,7 +31,7 @@ export default function ItemDetailContainer() {
     }, [])
 
     return <>
-        {load && <Loading />}
+        { load && <Loading />}
         { item && <ItemDetail item={item} />}
     </>
 }

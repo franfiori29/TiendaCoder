@@ -1,17 +1,22 @@
-import React from 'react'
-import ItemCount from '../../ItemCount/ItemCount'
+import React, { useState, useEffect } from 'react';
+import ItemCount from '../../ItemCount/ItemCount';
 
 
 
 export default function ItemDetail(props) {
+
+    const [stock, setStock] = useState(props.item.stock);
+
+    useEffect(() => {
+    }, [stock])
+
     function handleAdd(toAdd) {
-        console.log(props.item.stock)
-        if (!props.item.stock) alert("No hay stock");
+        if (!stock) { alert("No hay stock") }
+        else setStock(stock - toAdd);
     }
 
     return (
         <div style={{
-            margin: '10px',
             padding: '10px',
             display: 'flex',
             flexWrap: 'wrap',
@@ -22,10 +27,10 @@ export default function ItemDetail(props) {
         }} >
             <p style={{ flex: '1', textAlign: 'center' }} > <b>{props.item.title}</b></p>
             <p><b>{props.item.description}</b></p>
-            <img src={props.item.pictureUrl} style={{ width: '60%' }} />
+            <img src={props.item.pictureUrl} style={{ width: '60%' }} alt='foto de auto' />
             <div style={{ textAlign: 'center' }}>
                 <p><b>${props.item.price}</b></p>
-                <ItemCount stock={props.item.stock} initial={0} onAdd={handleAdd} />
+                <ItemCount stock={stock} initial={0} onAdd={handleAdd} />
             </div>
         </div >
     )
