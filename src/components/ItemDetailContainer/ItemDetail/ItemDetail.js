@@ -4,6 +4,11 @@ import ItemCount from '../../ItemCount/ItemCount'
 
 
 export default function ItemDetail(props) {
+    function handleAdd(toAdd) {
+        console.log(props.item.stock)
+        if (!props.item.stock) alert("No hay stock");
+    }
+
     return (
         <div style={{
             margin: '10px',
@@ -20,7 +25,7 @@ export default function ItemDetail(props) {
             <img src={props.item.pictureUrl} style={{ width: '60%' }} />
             <div style={{ textAlign: 'center' }}>
                 <p><b>${props.item.price}</b></p>
-                <ItemCount stock={props.item.stock} initial={0} />
+                <ItemCount stock={props.item.stock} initial={0} onAdd={handleAdd} />
             </div>
         </div >
     )
