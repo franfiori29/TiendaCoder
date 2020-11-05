@@ -11,7 +11,6 @@ export default function ItemDetail(props) {
 
     return (
         <div style={{
-            margin: '10px',
             padding: '10px',
             display: 'flex',
             flexWrap: 'wrap',

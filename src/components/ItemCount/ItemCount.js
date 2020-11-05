@@ -11,9 +11,6 @@ function ItemCount({ stock, initial, onAdd }) {
             setToAdd(toAdd >= stock ? stock : toAdd + 1)
         }
     }
-    function handleAdd(toAdd) {
-        if (!stock) alert("No hay stock");
-    }
 
     return (
         <div className="itemCount">
