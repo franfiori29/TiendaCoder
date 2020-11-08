@@ -5,10 +5,6 @@ function ItemCount(props) {
 
     const [toAdd, setToAdd] = useState(props.initial);
 
-    useEffect(() => {
-        setToAdd(props.initial)
-    }, [props])
-
     function handleClick(e) {
         if (e.target.id === "subtract") {
             setToAdd(toAdd === props.initial ? props.initial : toAdd - 1)
