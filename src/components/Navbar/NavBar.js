@@ -34,14 +34,14 @@ function NavBar() {
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
-          <li className="nav-item active">
-            <NavLink to="/categoria/autos" className="nav-link">AUTOS</NavLink>
+          <li className="nav-item">
+            <NavLink to="/categoria/autos" activeClassName="active" className="nav-link">AUTOS</NavLink>
           </li>
           <li className="nav-item ">
-            <NavLink to="/categoria/camionetas" className="nav-link">CAMIONETAS</NavLink>
+            <NavLink to="/categoria/camionetas" activeClassName="active" className="nav-link">CAMIONETAS</NavLink>
           </li>
           <li className="nav-item ">
-            <NavLink to="/categoria/motos" className="nav-link">MOTOS</NavLink>
+            <NavLink to="/categoria/motos" activeClassName="active" className="nav-link">MOTOS</NavLink>
           </li>
         </ul>
       </div>
