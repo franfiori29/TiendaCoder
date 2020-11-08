@@ -1,6 +1,7 @@
 import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
 
@@ -8,16 +9,18 @@ function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="navbar-brand divLogo">
-        <a className="navbar-brand" href="#">
+        <NavLink to="/" className="navbar-brand">
           <img
             src={require("../../assets/bmw-logo.png")}
             className="d-inline-block align-top imgLogo"
             alt="LogoBMW"
           />
           <span id="BMW">BMW</span>
-        </a>
+        </NavLink>
       </div>
-      <CartWidget />
+      <NavLink to="/carrito" id="linkCarrito">
+        <CartWidget />
+      </NavLink>
       <button
         className="navbar-toggler"
         type="button"
@@ -32,13 +35,13 @@ function NavBar() {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <a className="nav-link">AUTOS</a>
+            <NavLink to="/autos" className="nav-link">AUTOS</NavLink>
           </li>
           <li className="nav-item ">
-            <a className="nav-link">CAMIONETAS</a>
+            <NavLink to="/camionetas" className="nav-link">CAMIONETAS</NavLink>
           </li>
           <li className="nav-item ">
-            <a className="nav-link">MOTOS</a>
+            <NavLink to="/motos" className="nav-link">MOTOS</NavLink>
           </li>
         </ul>
       </div>

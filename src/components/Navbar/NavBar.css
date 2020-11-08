@@ -18,13 +18,13 @@
   display: flex;
 }
 
-#carrito {
+#linkCarrito {
   order: 1;
   margin-right: 20px
 }
 
 @media (max-width: 990px) {
-  #carrito {
+  #linkCarrito {
     order: 0
   }
 }
