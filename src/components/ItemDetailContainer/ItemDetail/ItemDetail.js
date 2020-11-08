@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemCount from '../../ItemCount/ItemCount'
 
 
 
 export default function ItemDetail(props) {
+
+    const [stock, setStock] = useState(props.item.stock);
+
     function handleAdd(toAdd) {
-        console.log(props.item.stock)
-        if (!props.item.stock) alert("No hay stock");
+        if (!stock) { alert("No hay stock") }
+        else setStock(stock - toAdd);
     }
 
     return (
@@ -24,7 +27,7 @@ export default function ItemDetail(props) {
             <img src={props.item.pictureUrl} style={{ width: '60%' }} />
             <div style={{ textAlign: 'center' }}>
                 <p><b>${props.item.price}</b></p>
-                <ItemCount stock={props.item.stock} initial={0} onAdd={handleAdd} />
+                <ItemCount stock={stock} initial={0} onAdd={handleAdd} />
             </div>
         </div >
     )
