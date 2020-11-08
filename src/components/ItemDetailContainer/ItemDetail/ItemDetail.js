@@ -22,9 +22,9 @@ export default function ItemDetail(props) {
             width: '70%',
             margin: 'auto'
         }} >
-            <p style={{ flex: '1', textAlign: 'center' }} > <b>{props.item.title}</b></p>
+            <p style={{ flex: '1', textAlign: 'center', fontSize: '30px' }} > <b>{props.item.title}</b></p>
             <p><b>{props.item.description}</b></p>
-            <img src={props.item.pictureUrl} style={{ width: '60%' }} />
+            <img src={props.item.pictureUrl} style={{ width: '60%' }} alt='fotoDelAuto' />
             <div style={{ textAlign: 'center' }}>
                 <p><b>${props.item.price}</b></p>
                 <ItemCount stock={stock} initial={0} onAdd={handleAdd} />

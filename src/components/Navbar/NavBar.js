@@ -35,13 +35,13 @@ function NavBar() {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <NavLink to="/autos" className="nav-link">AUTOS</NavLink>
+            <NavLink to="/categoria/autos" className="nav-link">AUTOS</NavLink>
           </li>
           <li className="nav-item ">
-            <NavLink to="/camionetas" className="nav-link">CAMIONETAS</NavLink>
+            <NavLink to="/categoria/camionetas" className="nav-link">CAMIONETAS</NavLink>
           </li>
           <li className="nav-item ">
-            <NavLink to="/motos" className="nav-link">MOTOS</NavLink>
+            <NavLink to="/categoria/motos" className="nav-link">MOTOS</NavLink>
           </li>
         </ul>
       </div>

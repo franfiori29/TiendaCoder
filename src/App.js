@@ -16,6 +16,9 @@ function App() {
           <Route exact path='/'>
             <ItemListContainer title={"El placer de conducir"} />
           </Route>
+          <Route exact path='/categoria/:cat'>
+            <ItemListContainer title={"El placer de conducir"} />
+          </Route>
           <Route exact path='/item/:id/'>
             <ItemDetailContainer />
           </Route>
