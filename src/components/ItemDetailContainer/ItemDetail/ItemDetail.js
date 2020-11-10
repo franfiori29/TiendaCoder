@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom';
 export default function ItemDetail(props) {
 
     const [stock, setStock] = useState(props.item.stock);
-    const [toCart, setToCart] = useState(0);
+    const [toCart, setToCart] = useState(null);
 
     function handleAdd(toAdd) {
         if (!stock) { alert("No hay stock") }
         else {
             setStock(stock - toAdd);
-            setToCart(toCart + toAdd);
+            toAdd == 0 ? setToCart(toCart) : setToCart(toCart + toAdd);
         };
     }
 
@@ -34,7 +34,7 @@ export default function ItemDetail(props) {
             <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
                 <p><b>${props.item.price}</b></p>
                 {!toCart && <ItemCount stock={stock} initial={0} onAdd={handleAdd} />}
-                <Link to='/carrito' style={{ paddingTop: '20px', fontWeight: '600', borderBottom: '1px solid black' }}>Terminar Compra</Link>
+                {toCart && <Link to='/carrito' style={{ paddingTop: '20px', fontWeight: '600', borderBottom: '1px solid black' }}>Terminar Compra</Link>}
             </div>
         </div >
     )

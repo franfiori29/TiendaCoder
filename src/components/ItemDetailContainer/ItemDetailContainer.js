@@ -36,7 +36,7 @@ export default function ItemDetailContainer() {
     }, [id])
 
     return <>
-        {load && <Loading />}
+        { load && <Loading />}
         { item && <ItemDetail item={item} />}
     </>
 }
