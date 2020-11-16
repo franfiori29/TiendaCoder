@@ -15,7 +15,7 @@ const itemPromise = new Promise((res) => {
             { id: 4312, cat: 'camionetas', stock: 10, title: 'BMW m3', price: 50000, pictureUrl: 'https://automundo.pe/wp-content/uploads/2016/01/2015-BMW-X5-M.jpg' },
             { id: 3525, cat: 'autos', stock: 3, title: 'BMW Serie 8', price: 35000, pictureUrl: 'https://fotos.perfil.com/2018/06/01/trim/1280/720/1-nuevo-bmw-serie-8.jpg' },
         ])
-    }, 2000);
+    }, 1000);
 })
 
 export default function ItemListContainer({ title }) {

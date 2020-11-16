@@ -18,14 +18,14 @@ const getItem = (idItem) => {
                 { id: 3525, cat: 'autos', stock: 3, title: 'BMW Serie 8', price: 35000, description: 'El BMW X6 es un automóvil todoterreno de gran lujo del segmento E del fabricante alemán BMW, que salió a la venta en enero de 2008 junto con su presentación en el salón del Automóvil de Detroit. Se basa en gran parte en el BMW X5 pero con una silueta más deportiva, semejante a un cupé. Es un cinco puertas con cuatro plazas, motor delantero longitudinal y tracción a las cuatro ruedas.', pictureUrl: 'https://fotos.perfil.com/2018/06/01/trim/1280/720/1-nuevo-bmw-serie-8.jpg' },
             ];
             res(items.find(item => item.id === +idItem))
-        }, 2000);
+        }, 1000);
     });
 }
 
 export default function ItemDetailContainer() {
     const [item, setItem] = useState(null);
     const [load, setLoad] = useState(null);
-    const { id } = useParams()
+    const { id } = useParams();
 
     useEffect(() => {
         setLoad(true);

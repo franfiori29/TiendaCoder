@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
 import ItemCount from '../../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
-
-
-
+import { useCartContext } from '../../../context/CartContext';
 
 export default function ItemDetail(props) {
 
     const [stock, setStock] = useState(props.item.stock);
     const [toCart, setToCart] = useState(null);
+    const { addItem } = useCartContext();
 
     function handleAdd(toAdd) {
         if (!stock) { alert("No hay stock") }
         else {
             setStock(stock - toAdd);
-            toAdd == 0 ? setToCart(toCart) : setToCart(toCart + toAdd);
-        };
+            if (toAdd) {
+                setToCart(toCart + toAdd)
+                addItem(props.item, toAdd)
+            } else setToCart(toCart)
+        }
+
     }
 
     return (
