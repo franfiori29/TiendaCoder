@@ -6,6 +6,8 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './context/CartContext';
+import 'semantic-ui-css/semantic.min.css'
+
 
 function App() {
 
@@ -16,10 +18,10 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path='/'>
-              <ItemListContainer title={"El placer de conducir"} />
+              <ItemListContainer title={"EL PLACER DE CONDUCIR"} />
             </Route>
             <Route exact path='/categoria/:cat'>
-              <ItemListContainer title={"El placer de conducir"} />
+              <ItemListContainer />
             </Route>
             <Route exact path='/item/:id/'>
               <ItemDetailContainer />

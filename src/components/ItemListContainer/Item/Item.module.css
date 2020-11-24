@@ -1,0 +1,11 @@
+.cardContainer {
+    width: 500px !important;
+    margin: 20px !important;
+}
+
+@media screen and (max-width: 550px) {
+    .cardContainer {
+        width: 300px !important;
+        margin: 10px !important;
+    }
+}

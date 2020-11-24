@@ -1,22 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { Card, Image } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import styles from './Item.module.css';
 
-export default function Item(props) {
+export default function Item({ item }) {
     return (
-        <div style={{
-            border: '2px solid black',
-            margin: '10px',
-            padding: '10px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: ' center',
-            width: '600px',
-            height: '400px',
-            borderRadius: '40px'
-        }} >
-            <p><b>{props.item.title}</b></p>
-            <p><b>${props.item.price}</b></p>
-            <img src={props.item.pictureUrl} style={{ maxHeight: '300px', borderRadius: '30px' }} />
-        </div>
+        <Card className={styles.cardContainer}>
+            <Image src={item.pictureUrl} wrapped ui={false} />
+            <Card.Content>
+                <Card.Header>{item.title}</Card.Header>
+                <Card.Meta>
+                    <span className='stock'>Stock: {item.stock}</span>
+                </Card.Meta>
+                <Card.Description>
+                    ${item.price}
+                </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+                <Link to={`/item/${item.id}`}> Ver Detalle </Link>
+            </Card.Content>
+        </Card>
     )
 }

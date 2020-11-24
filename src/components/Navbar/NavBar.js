@@ -1,23 +1,23 @@
 import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
-import "./NavBar.css";
+import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
 
 function NavBar() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="navbar-brand divLogo">
-        <NavLink to="/" className="navbar-brand">
+      <div className={`${styles.navbarBrand} ${styles.divLogo}`}>
+        <NavLink to="/" className={styles.navbarBrand}>
           <img
             src={require("../../assets/bmw-logo.png")}
-            className="d-inline-block align-top imgLogo"
+            className={`d-inline-block align-top ${styles.imgLogo}`}
             alt="LogoBMW"
           />
-          <span id="BMW">BMW</span>
+          <span id={styles.BMW}>BMW</span>
         </NavLink>
       </div>
-      <NavLink to="/carrito" id="linkCarrito">
+      <NavLink to="/carrito" id={styles.linkCarrito}>
         <CartWidget />
       </NavLink>
       <button

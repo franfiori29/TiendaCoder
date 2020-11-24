@@ -1,11 +1,11 @@
 import React from 'react';
 import Item from '../Item/Item.js';
-import { Link } from 'react-router-dom';
+import styles from './ItemList.module.css';
 
 export default function ItemList(props) {
     return (
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
-            {props.items.map(itemDeArray => <Link to={`/item/${itemDeArray.id}`} key={itemDeArray.id}> <Item item={itemDeArray} /></Link>)}
+        <div className={styles.itemList}>
+            {props.items.map(itemDeArray => <Item key={itemDeArray.id} item={itemDeArray} />)}
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList/ItemList.js';
 import { useParams } from 'react-router-dom';
 import { getFirestore } from '../../firebase/index.js';
+import styles from './ItemListContainer.module.css';
 
 export default function ItemListContainer({ title }) {
 
@@ -19,14 +20,11 @@ export default function ItemListContainer({ title }) {
                 querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
             )
         })
-
     }, [cat])
-
-
 
     return (
         <>
-            <h1 style={{ textAlign: 'center', marginTop: '10px' }} >{title}</h1>
+            <h1 className={styles.title}>{cat ? cat.toUpperCase() : title}</h1>
             {arrayItems && <ItemList items={arrayItems} />}
         </>
     )

@@ -1,0 +1,32 @@
+.itemDetail {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin: auto
+}
+
+.itemTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 30px
+}
+
+.itemImage {
+    width: 600px;
+    margin-right: 20px
+}
+
+.itemDescription {
+    text-align: center;
+    display: flex;
+    flex-direction: column
+}
+
+.itemTerminarCompra {
+    padding-top: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid black
+}

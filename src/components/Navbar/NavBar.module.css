@@ -3,10 +3,10 @@
   flex: 1;
 }
 
-.navbar-brand{
+.navbarBrand {
   display: flex;
   align-items: center;
-}  
+}
 
 .imgLogo {
   width: 50px;

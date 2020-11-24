@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
-import ItemCount from '../../ItemCount/ItemCount';
+import React, { useState, useEffect } from 'react';
+import ItemCount from './ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
+import styles from './ItemDetail.module.css';
 import { useCartContext } from '../../../context/CartContext';
+import _ from 'lodash';
 
-export default function ItemDetail(props) {
+export default function ItemDetail({ item }) {
 
-    const [stock, setStock] = useState(props.item.stock);
+    const [stock, setStock] = useState(item.stock);
     const [toCart, setToCart] = useState(null);
-    const { addItem } = useCartContext();
+    const { addItem, cart } = useCartContext();
+
+    useEffect(() => {
+        console.log(stockFromCart())
+        setStock(stock - stockFromCart())
+    }, [])
 
     function handleAdd(toAdd) {
         if (!stock) { alert("No hay stock") }
@@ -15,29 +22,30 @@ export default function ItemDetail(props) {
             setStock(stock - toAdd);
             if (toAdd) {
                 setToCart(toCart + toAdd)
-                addItem(props.item, toAdd)
+                addItem(item, toAdd)
             } else setToCart(toCart)
         }
+    }
 
+    function stockFromCart() {
+        if (cart.length) {
+            let itemInCart = cart.find(obj => obj.item.id === item.id);
+            if (!_.isEmpty(itemInCart)) {
+                return itemInCart.quantity;
+            } else return 0;
+        }
+        return 0
     }
 
     return (
-        <div style={{
-            padding: '10px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: ' center',
-            width: '70%',
-            margin: 'auto'
-        }} >
-            <p style={{ flex: '1', textAlign: 'center', fontSize: '30px' }} > <b>{props.item.title}</b></p>
-            <p><b>{props.item.description}</b></p>
-            <img src={props.item.pictureUrl} style={{ width: '60%' }} alt='fotoDelAuto' />
-            <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
-                <p><b>${props.item.price}</b></p>
+        <div className={styles.itemDetail} >
+            <p className={styles.itemTitle} > <b>{item.title}</b></p>
+            <p><b>{item.description}</b></p>
+            <img src={item.pictureUrl} className={styles.itemImage} alt='fotoDelAuto' />
+            <div className={styles.itemDescription}>
+                <p><b>${item.price}</b></p>
                 {!toCart && <ItemCount stock={stock} initial={0} onAdd={handleAdd} />}
-                {toCart && <Link to='/carrito' style={{ paddingTop: '20px', fontWeight: '600', borderBottom: '1px solid black' }}>Terminar Compra</Link>}
+                {toCart && <Link to='/carrito' className={styles.itemTerminarCompra}>Terminar Compra</Link>}
             </div>
         </div >
     )
