@@ -1,5 +1,5 @@
 import React from 'react';
-import Item from '../Item/Item.js';
+import Item from './Item/Item.js';
 import styles from './ItemList.module.css';
 import { Card } from 'semantic-ui-react';
 

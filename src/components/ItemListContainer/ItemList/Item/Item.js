@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import styles from './Item.module.css';
-import { useCartContext } from '../../../context/CartContext';
+import { useCartContext } from '../../../../context/CartContext';
 import _ from 'lodash';
 
 export default function Item({ item }) {
