@@ -12,11 +12,15 @@ export default function ItemDetail({ item }) {
     const { addItem, cart } = useCartContext();
 
     useEffect(() => {
-        console.log(stockFromCart())
-        setStock(stock - stockFromCart())
-    }, [])
+        if (cart.length) {
+            let itemInCart = cart.find(obj => obj.item.id === item.id);
+            if (!_.isEmpty(itemInCart)) {
+                setStock(s => s - itemInCart.quantity);
+            }
+        }
+    }, [cart, item])
 
-    function handleAdd(toAdd) {
+    const handleAdd = (toAdd) => {
         if (!stock) { alert("No hay stock") }
         else {
             setStock(stock - toAdd);
@@ -25,16 +29,6 @@ export default function ItemDetail({ item }) {
                 addItem(item, toAdd)
             } else setToCart(toCart)
         }
-    }
-
-    function stockFromCart() {
-        if (cart.length) {
-            let itemInCart = cart.find(obj => obj.item.id === item.id);
-            if (!_.isEmpty(itemInCart)) {
-                return itemInCart.quantity;
-            } else return 0;
-        }
-        return 0
     }
 
     return (

@@ -30,3 +30,17 @@
     font-weight: 600;
     border-bottom: 1px solid black
 }
+
+@media screen and (max-width: 600px) {
+    .itemImage {
+        width: 400px;
+        margin-right: 10px
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .itemImage {
+        width: 400px;
+        margin-right: 10px
+    }
+}

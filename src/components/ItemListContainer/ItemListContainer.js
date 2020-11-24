@@ -3,6 +3,7 @@ import ItemList from './ItemList/ItemList.js';
 import { useParams } from 'react-router-dom';
 import { getFirestore } from '../../firebase/index.js';
 import styles from './ItemListContainer.module.css';
+import { Header } from 'semantic-ui-react';
 
 export default function ItemListContainer({ title }) {
 
@@ -20,11 +21,11 @@ export default function ItemListContainer({ title }) {
                 querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
             )
         })
-    }, [cat])
+    }, [cat]);
 
     return (
         <>
-            <h1 className={styles.title}>{cat ? cat.toUpperCase() : title}</h1>
+            <Header as='h1' className={styles.title}>{cat ? cat.toUpperCase() : title}</Header>
             {arrayItems && <ItemList items={arrayItems} />}
         </>
     )

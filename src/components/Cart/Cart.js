@@ -11,7 +11,7 @@ export default function Cart() {
 
     return (
         <>
-            {!!cart.length && <div className={styles.vaciar} onClick={clear}><a href='#'>VACIAR</a></div>}
+            {!!cart.length && <div className={styles.vaciar} onClick={clear}>VACIAR</div>}
 
             <div className={styles.divContainer}>
                 {cart.length ? cart.map(elem => <CartItem key={elem.item.id} item={elem.item} quantity={elem.quantity} />) :

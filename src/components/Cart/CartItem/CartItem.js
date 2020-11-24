@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCartContext } from '../../../context/CartContext';
-import { Button, Icon, Item, Label } from 'semantic-ui-react';
+import { Button, Item, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 export default function CartItem({ item, quantity }) {
@@ -10,7 +10,7 @@ export default function CartItem({ item, quantity }) {
         <Item style={{ padding: "30px", }}>
             <Item.Content>
                 <Link to={`/item/${item.id}`}>
-                    <Item.Header as='a'>{item.title}</Item.Header>
+                    <Item.Header>{item.title}</Item.Header>
                 </Link>
                 <Item.Meta>
                     <span className='cinema'>Cantidad: {quantity}</span>

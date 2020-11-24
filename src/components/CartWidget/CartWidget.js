@@ -8,7 +8,7 @@ export default function CartWidget() {
 
     return (
         <div id="carrito" >
-            {cartLength != 0 && <div>
+            {cartLength !== 0 && <div>
                 <img style={{ width: 40 }} src={logo} alt='' />
                 {' ' + cartLength}
             </div>}
