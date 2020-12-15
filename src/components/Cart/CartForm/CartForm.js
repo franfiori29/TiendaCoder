@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Form } from 'semantic-ui-react'
+import styles from './CartForm.module.css';
 
 export default function CartForm({ createOrder }) {
     const [name, setName] = useState('');
@@ -9,7 +10,10 @@ export default function CartForm({ createOrder }) {
     const [enabled, setEnable] = useState(false);
 
     useEffect(() => {
-        if (name && mail && confirm && tel) {
+        if (name &&
+            mail &&
+            confirm &&
+            /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/.test(tel)) {
             setEnable(true);
         } else setEnable(false);
     }, [name, mail, confirm, tel]);
@@ -28,15 +32,18 @@ export default function CartForm({ createOrder }) {
             case "tel":
                 setTel(evt.target.value);
                 break;
+            default:
+                console.log('?')
         };
     };
     return (
-        <Form style={{ display: "flex", flexDirection: "column", width: "50%", margin: "auto" }} onChange={handleChange}>
+        <Form className={styles.checkoutForm} onChange={handleChange}>
             <Form.Input label="Nombre: " id="nombre" type="text" required />
             <Form.Input label="E-mail: " id="mail" type="email" required />
             <Form.Input label="Repetir E-mail: " id="confirm" type="email" required />
             <Form.Input label="Teléfono: " id="tel" type="number" required />
-            <Form.Button size="big" onClick={(e) => createOrder(e, name, mail, tel)} disabled={!enabled}>Terminar Compra</Form.Button>
+            <Form.Button size="big" onClick={(e) => createOrder(e, name, mail, tel)}
+                disabled={!enabled}>Terminar Compra</Form.Button>
         </Form>
     )
 };
