@@ -8,6 +8,7 @@ export const useCartContext = () => useContext(CartContext);
 export const CartProvider = ({ children, defaultCart }) => {
 
     const [cart, setCart] = useState(defaultCart);
+    const [purchase, setPurchase] = useState();
 
     const addItem = (item, quantity) => {
         let newCart = cart.map(elem => elem.item.id === item.id ? { ...elem, quantity: quantity + elem.quantity } : elem);
@@ -26,9 +27,14 @@ export const CartProvider = ({ children, defaultCart }) => {
 
     const clear = () => {
         setCart([]);
+        setPurchase(false);
     }
 
-    return <CartContext.Provider value={{ cart, addItem, removeItem, clear }}>
+    const renderPurchase = (obj) => {
+        setPurchase(obj);
+    }
+
+    return <CartContext.Provider value={{ cart, addItem, removeItem, clear, purchase, renderPurchase }}>
         {children}
     </CartContext.Provider>
 }

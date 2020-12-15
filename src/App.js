@@ -6,7 +6,8 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './context/CartContext';
-import 'semantic-ui-css/semantic.min.css'
+import 'semantic-ui-css/semantic.min.css';
+import Checkout from './components/Checkout/Checkout';
 
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route exact path='/carrito'>
               <Cart />
+            </Route>
+            <Route exact path="/checkout">
+              <Checkout />
             </Route>
           </Switch>
         </BrowserRouter>
